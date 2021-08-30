@@ -7,7 +7,9 @@ import imgSrc4 from "../images/photo4.jpg";
 import imgSrc5 from "../images/photo5.jpg";
 import imgSrc6 from "../images/photo6.jpg";
 import imgSrc7 from "../images/photo7.jpg";
+import imgSrc8 from "../images/photo8.jpg";
 import "../style/Content.css";
+import { Button } from "react-bootstrap";
 
 const Content = () => {
   const finishCardData = [
@@ -95,46 +97,113 @@ const Content = () => {
   ];
 
   return (
-    <div className="container">
-      <div style={{fontWeight: "bolder"}}>조사가 완료된 설문조사</div>
-      <div
-        className="d-flex"
-        style={{ flexWrap: "wrap", justifyContent: "center" }}
-      >
-        {finishCardData.map(function (obj, i) {
-          return (
-            <SurveyCard
-              key={i}
-              cardTitle={obj.cardTitle}
-              badgeContent={obj.badgeContent}
-              dateStart={obj.dateStart}
-              dateEnd={obj.dateEnd}
-              tags={obj.tags}
-              progressVal={obj.progressVal}
-              imgSrc={obj.imgSrc}
-            ></SurveyCard>
-          );
-        })}
-      </div>
-      <div style={{fontWeight: "bolder"}}>진행 중인 설문조사</div>
-      <div
-        className="d-flex"
-        style={{ flexWrap: "wrap", justifyContent: "center" }}
-      >
-        {progressCardData.map(function (obj, i) {
-          return (
-            <SurveyCard
-              key={i}
-              cardTitle={obj.cardTitle}
-              badgeContent={obj.badgeContent}
-              dateStart={obj.dateStart}
-              dateEnd={obj.dateEnd}
-              tags={obj.tags}
-              progressVal={obj.progressVal}
-              imgSrc={obj.imgSrc}
-            ></SurveyCard>
-          );
-        })}
+    <div>
+      <div style={{ height: "500px", backgroundColor: "#212529" }}>
+        <div className="d-flex flex-row container">
+          <div className="d-flex flex-column">
+            <div
+              style={{
+                color: "#0078FF",
+                fontSize: "1rem",
+                fontWeight: "bolder",
+                margin: "70px 0px 15px 0px",
+              }}
+            >
+              설문조사 디자인 플랫폼
+            </div>
+            <div
+              style={{
+                color: "white",
+                fontSize: "3rem",
+                fontWeight: "bolder",
+              }}
+            >
+              더 나은
+              <br /> 설문조사 경험을 위해
+            </div>
+            <div
+              style={{
+                color: "white",
+                fontSize: "1.3rem",
+                margin: "30px 0px 25px 0px",
+              }}
+            >
+              저희가 준비한,
+              <br /> Survey Blue만의 특별한 기능들을 만나보세요.
+            </div>
+            <div>
+              <Button
+                className="btn-primary"
+                style={{ padding: "5px 60px", fontSize: "1.2rem" }}
+              >
+                시작하기
+              </Button>
+            </div>
+          </div>
+          <div style={{marginTop: "60px", marginLeft: "auto"}}>
+            <img src={imgSrc8} alt=""/>
+          </div>
+        </div>
+        <div className="container">
+          <div
+            style={{
+              fontWeight: "bolder",
+              textAlign: "center",
+              fontSize: "1.3rem",
+              margin: "120px 0px 20px 0px",
+            }}
+          >
+            조사가 완료된 설문조사
+          </div>
+          <div
+            className="d-flex"
+            style={{ flexWrap: "wrap", justifyContent: "center" }}
+          >
+            {finishCardData.map(function (obj, i) {
+              return (
+                <SurveyCard
+                  key={i}
+                  cardTitle={obj.cardTitle}
+                  badgeContent={obj.badgeContent}
+                  dateStart={obj.dateStart}
+                  dateEnd={obj.dateEnd}
+                  tags={obj.tags}
+                  progressVal={obj.progressVal}
+                  imgSrc={obj.imgSrc}
+                ></SurveyCard>
+              );
+            })}
+          </div>
+          <div
+            style={{
+              fontWeight: "bolder",
+              textAlign: "center",
+              fontSize: "1.3rem",
+              margin: "80px 0px 20px 0px",
+            }}
+          >
+            진행 중인 설문조사
+          </div>
+          <div
+            className="d-flex"
+            style={{ flexWrap: "wrap", justifyContent: "center" }}
+          >
+            {progressCardData.map(function (obj, i) {
+              return (
+                <SurveyCard
+                  key={i}
+                  cardTitle={obj.cardTitle}
+                  badgeContent={obj.badgeContent}
+                  dateStart={obj.dateStart}
+                  dateEnd={obj.dateEnd}
+                  tags={obj.tags}
+                  progressVal={obj.progressVal}
+                  imgSrc={obj.imgSrc}
+                ></SurveyCard>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

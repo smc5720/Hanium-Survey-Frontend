@@ -27,7 +27,7 @@ const SurveyCard = (props) => {
   }
 
   return (
-    <Card style={{ width: "500px", margin: "8px"}}>
+    <Card style={{ width: "500px", margin: "8px", minWidth: "500px" }}>
       <div className="d-flex flex-row">
         <div style={{ width: "150px" }}>
           <Card.Img src={props.imgSrc} />
@@ -39,7 +39,7 @@ const SurveyCard = (props) => {
               <div>
                 <Badge content={badgeContent} type={badgeType} />
               </div>
-              <div style={{ marginLeft: "50px" }}>
+              <div style={{ marginLeft: "auto" }}>
                 <Button className="btn-sm" variant={buttonColor}>
                   {buttonState}
                 </Button>
